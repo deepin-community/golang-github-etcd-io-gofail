@@ -1,5 +1,51 @@
-template-repository (1.0-1) unstable; urgency=medium
+golang-github-etcd-io-gofail (0.1.0-1) unstable; urgency=medium
 
-  * Initial release
+  * Team upload.
+  * New upstream version 0.1.0
+  * debian/control:
+    - Add "Rules-Requires-Root: no" to debian/control
+    - Use dh-sequence-golang instead of dh-golang and --with=golang
+    - Bump versioned dependencies as per go.mod
+    - Drop unused build dependency on openstack-pkg-tools
+    - Drop -dev package’s unused dependency on ${shlibs:Depends}
+    - Mark library package with "Multi-Arch: foreign"
+    - Set source package to "Section: golang"
+      while keeping binary package in "Section: admin"
+    - Add Static-Built-Using field for binary package
+    - Bump Standards-Version to 4.6.2 (no change)
+  * debian/rules:
+    - Invoke dh with --builddirectory=_build
+    - Replace override_dh_install with execute_after_dh_install
+  * debian/copyright: Add Upstream-Contact field
+  * debian/gbp.conf: Set debian-branch to debian/sid for DEP-14 conformance
+  * Add debian/watch
+  * Add debian/upstream/metadata
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Anthony Fok <foka@debian.org>  Sat, 04 Nov 2023 05:54:30 -0600
+
+golang-github-etcd-io-gofail (0.0.0+git.2022.09.25.d0d2a96a6e-4) unstable; urgency=medium
+
+  * Fix FTBFS on all arch.
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 01 Nov 2022 14:02:41 +0100
+
+golang-github-etcd-io-gofail (0.0.0+git.2022.09.25.d0d2a96a6e-3) unstable; urgency=medium
+
+  * Re-upload source-only.
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 26 Oct 2022 23:14:50 +0200
+
+golang-github-etcd-io-gofail (0.0.0+git.2022.09.25.d0d2a96a6e-2) unstable; urgency=medium
+
+  * Set golang team as maintainer, me as uploader.
+  * Set Architecture: all.
+  * Add a golang-github-etcd-io-gofail package containing /usr/bin/gofail.
+  * rm .gitignore.
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 26 Oct 2022 13:42:29 +0200
+
+golang-github-etcd-io-gofail (0.0.0+git.2022.09.25.d0d2a96a6e-1) unstable; urgency=medium
+
+  * Initial release. (Closes: #1022807)
+
+ -- Thomas Goirand <zigo@debian.org>  Thu, 29 Sep 2022 13:19:14 +0200
