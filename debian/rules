@@ -1,4 +1,14 @@
 #!/usr/bin/make -f
 
+export DH_GOPKG := go.etcd.io/gofail
+export DH_GOLANG_INSTALL_ALL := 1
+export DH_GOLANG_EXCLUDES := examples
+
 %:
-	dh $@
+	dh $@ --builddirectory=_build --buildsystem=golang
+
+override_dh_auto_test:
+	@echo "Tests are disabled for now"
+
+execute_after_dh_install:
+	rm -fv $(CURDIR)/debian/golang-github-etcd-io-gofail-dev/usr/share/gocode/src/go.etcd.io/gofail/.gitignore
